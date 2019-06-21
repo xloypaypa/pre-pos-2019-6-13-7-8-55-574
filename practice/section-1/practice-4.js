@@ -1,5 +1,15 @@
 'use strict';
 
+/* eslint-disable no-unused-vars */
+
 function collectSameElements(collectionA, objectB) {
-  return '实现练习要求，并改写该行代码。';
+  const result = [];
+  for (let i = 0; i < collectionA.length; i++) {
+    if (objectB.value.indexOf(collectionA[i].key) !== -1) {
+      result.push(collectionA[i].key);
+    }
+  }
+  return result;
 }
+
+/* eslint-enable no-unused-vars */
