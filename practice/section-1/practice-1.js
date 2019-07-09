@@ -4,9 +4,11 @@
 
 function collectSameElements(collectionA, collectionB) {
   const result = [];
+  collectionA.includes = includes;
+  collectionB.includes = includes;
   for (let i = 0; i < collectionA.length; i++) {
     const wanted = collectionA[i];
-    const isInclude = includes(collectionB, wanted);
+    const isInclude = collectionB.includes(wanted);
     if (isInclude) {
       result.push(wanted);
     }
@@ -14,9 +16,9 @@ function collectSameElements(collectionA, collectionB) {
   return result;
 }
 
-function includes(collection, wanted) {
-  for (let i = 0; i < collection.length; i++) {
-    if (collection[i] === wanted) {
+function includes(wanted) {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === wanted) {
       return true;
     }
   }
