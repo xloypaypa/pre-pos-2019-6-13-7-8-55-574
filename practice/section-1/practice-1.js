@@ -6,6 +6,11 @@ function collectSameElements(collectionA, collectionB) {
   const result = [];
   collectionA.includes = includes;
   collectionB.includes = includes;
+updateResultIfCollectionAItemIsSameCollectionB(result, collectionA, collectionB);
+  return result;
+}
+
+function updateResultIfCollectionAItemIsSameCollectionB(result, collectionA, collectionB) {
   for (let i = 0; i < collectionA.length; i++) {
     const wanted = collectionA[i];
     const isInclude = collectionB.includes(wanted);
@@ -13,7 +18,6 @@ function collectSameElements(collectionA, collectionB) {
       result.push(wanted);
     }
   }
-  return result;
 }
 
 function includes(wanted) {
