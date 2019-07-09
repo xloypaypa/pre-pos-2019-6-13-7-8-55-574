@@ -6,8 +6,7 @@ function collectSameElements(collectionA, collectionB) {
   const result = [];
   for (let i = 0; i < collectionA.length; i++) {
     let wanted = collectionA[i];
-    let found = includes(collectionB, wanted);
-    if (found) {
+    if (includes(collectionB, wanted)) {
       result.push(collectionA[i]);
     }
   }
